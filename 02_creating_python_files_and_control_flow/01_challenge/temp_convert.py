@@ -1,30 +1,28 @@
-# def convert():
+def convert():
     # ここにコードを書いてください
     # temp変数を編集し、ユーザー入力として温度を受け取ります。整数に変換することを忘れないでください
-
-#入力値が華氏の場合
-def fahrenheit_to_celsius(fahrenheit):
-        return (fahrenheit - 32) * 5/9
-#入力値が摂氏の場合
-def celsius_to_fahrenheit(celsius):
-        return celsius * 9/5 + 32
-def convert():
-        temperature = float(input("温度を入力してください： "))
-        unit = input("温度の単位を入力してください（華氏または摂氏）： ")
-
-        if unit.lower() == '華氏':
-            celsius = fahrenheit_to_celsius(temperature)
-            print(f"摂氏 {celsius:.2f} 度です。")
-        elif unit.lower() == '摂氏':
-            fahrenheit = celsius_to_fahrenheit(temperature)
-            print(f"華氏 {fahrenheit:.2f} 度です。")
-        else:
-            print("無効な単位が入力されました。華氏または摂氏で入力してください。")
-if __name__ == "__main__":
-    convert()
     # f = 華氏、c = 摂氏
-#     temp = 0
+    # ユーザーから温度と温度単位を受け取る
+    temp_input = input("Enter temperature: ")
+    unit_input = input("Enter unit (f for Fahrenheit, c for Celsius): ")
 
-#     return temp
+    # 温度を整数に変換
+    temp = int(temp_input)
 
-# convert()
+    # 温度の単位が華氏の場合は摂氏に変換し、摂氏の場合は華氏に変換
+    if unit_input == 'f':
+        temp = (temp - 32) * 5 / 9
+        unit_output = 'Celsius'
+    elif unit_input == 'c':
+        temp = temp * 9 / 5 + 32
+        unit_output = 'Fahrenheit'
+    else:
+        print("Invalid unit input. Please enter 'f' for Fahrenheit or 'c' for Celsius.")
+        return
+
+    # 変換された温度を出力
+    print(f"The temperature is {int(temp)} {unit_output}.")
+
+    return temp
+
+convert()
