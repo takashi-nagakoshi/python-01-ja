@@ -25,3 +25,5 @@ def divide(a, b):
     else:
         return "bad input"
     
+print("Addition:", add(-5.2, 3))
+    
